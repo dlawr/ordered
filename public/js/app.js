@@ -1,8 +1,27 @@
 const app               = angular.module('bookmarkd', []);
 
 app.controller( 'mainController' , ['$http' , function ( $http ){
-  this.form  = {};
 
+    this.bookmarks = '';
+
+    this.getBookmarks = () => {
+      $http({
+        method    : 'GET',
+        url       : '/bookmarks'
+      }).then ( response => {
+        this.bookmarks = response.data;
+        console.log(this.bookmarks[0].title);
+        } , error => {
+          console.log (error.message );
+        }
+      );
+    };
+
+    //load immediately onto page
+    this.getBookmarks();
+
+
+    this.form  = {};
   this.addBookmark = () => {
     $http({
       method      : 'POST',
