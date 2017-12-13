@@ -40,6 +40,8 @@ app.use( express.static( 'public' ));
 
 
 //Routes
+const bookmarksController = require( './controllers/bookmarkController.js' );
+app.use ( '/bookmarks' , bookmarksController );
 
 app.listen( PORT , () =>{
   console.log( moment().format('MMMM Do YYYY, h:mm:ss a') , '📚' , 'bookmarks happening on port' , PORT);
