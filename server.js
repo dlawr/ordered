@@ -18,7 +18,7 @@ mongoose.Promise      = global.Promise;
 mongoose.connect ( mongoURI , { useMongoClient: true},
   () => console.log( 'Mongo running at' , mongoURI )
 );
-
+syntax error
 // Error / success
 db.on( 'error', ( err ) => console.log( err.message + ' is Mongod not running?' ));
 db.on( 'connected', () => console.log( 'mongo connected: ', mongoURI ));
@@ -33,11 +33,11 @@ db.on( 'open' , () => {
 app.use(express.urlencoded({ extended: false }));// extended: false - does not allow nested objects in query strings
 app.use(express.json());// returns middleware that only parses JSON
 
-// Use morgan
+// Use morganklfvdmosv'fdsl;
 app.use ( morgan ( 'tiny') );
 
 app.use( express.static( 'public' ));
-
+mvkdsvmk;ldfvjsdl;kfvjdl;kfv
 
 //Routes
 const bookmarksController = require( './controllers/bookmarkController.js' );
