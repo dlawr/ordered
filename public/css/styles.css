@@ -1,0 +1,177 @@
+/****************************************
+            General
+****************************************/
+body{
+  background-image: url(../assets/images/sayagata-400px.png);
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Lora', serif;
+  background-color: #e4474b;
+  padding:10px;
+  margin-top:0;
+  box-shadow: 1px 1px 8px black;
+}
+
+/****************************************
+            Form
+****************************************/
+form {
+  margin:auto;
+  text-align:center;
+}
+
+input {
+  margin-right:10px;
+  min-width: 200px;
+  padding: .5em;
+  border-radius: 10px;
+}
+
+#submit {
+  transition-duration: .5s;
+  border:none;
+  background-color: silver;
+  padding: .5em;
+  box-shadow: 1px 1px 4px black;
+}
+
+#submit:hover {
+  background-color:black;
+  color:white;
+  border:none;
+}
+
+input:focus {
+  background: silver;
+  color: ghostwhite;
+}
+/****************************************
+            Bookmark List
+****************************************/
+table {
+  margin:auto;
+  margin-top: 10px;
+  box-shadow: 1px 1px 8px black;
+  border-collapse: collapse;
+}
+
+td {
+  min-width: 10px;
+  padding:10px;
+}
+
+tr:nth-child(n){
+  background-color: #ff6b6b;
+}
+
+tr:nth-child(4n+1){
+  background-color: #d1464a;
+}
+
+.title a {
+  padding:10px;
+  font-size:1em;
+  transition-duration:0.5s;
+}
+
+.title a:hover {
+  font-weight:bold;
+  color: #fff3f3;
+  transform: translateX;
+}
+
+a {
+  text-decoration:none;
+  color: #272222;
+}
+
+a:hover {
+  opacity:0.8;
+}
+
+.delete {
+  color: black;
+  display: block;
+  width: 20px;
+  height: 20px;
+  text-align:center;
+  transition: .5s;
+}
+
+.delete:hover {
+  transform: rotate(360deg);
+  color:#fff3f3;
+}
+
+table button,table button:hover   {
+  background: rgba( 0,0,0,0);
+  border:none;
+}
+
+.repeater {
+  display: none;
+}
+/****************************************
+            Add/Delete Alerts
+****************************************/
+.alert {
+  opacity:0;
+  padding:10px;
+  text-align: center;
+  font-size:1.25em;
+  animation: alert-fade 3s;
+  background-color: silver;
+  margin:auto;
+  width:20%;
+  color: inhert;
+  margin-top: 10px;
+  margin-bottom:10px;
+  border-radius: 10px;
+}
+
+.alert2 {
+  opacity:0;
+  padding:10px;
+  text-align: center;
+  font-size:1.25em;
+  animation: alert-fade 3s;
+  background-color:#CA4454;
+  background-color:#7A1420;
+  background-color:#ff5858;
+  margin:auto;
+  width:20%;
+  color:white;
+  margin-top: 10px;
+  margin-bottom:10px;
+  border-radius: 10px;
+}
+
+.alert3 {
+  opacity:0;
+  padding:10px;
+  margin:auto;
+  width:20%;
+  margin-top: 10px;
+  margin-bottom:10px;
+  border-radius: 10px;
+}
+
+@keyframes alert-fade {
+    0%,50% {opacity :1;}
+    100% {opacity :0; background: ghostwhite;}
+}
+
+/****************************************
+            Media Queries
+****************************************/
+@media (max-width: 550px){
+  input {
+    min-width: 10px;
+  }
+  span {
+    display: block;
+  }
+}
