@@ -14,4 +14,24 @@ bookmarks.get ( '/' , async ( req , res ) => {
   }
 });
 
+//CREATE
+bookmarks.post ( '/' , async ( req , res ) => {
+  try {
+    const newBookmark = await Bookmark.create( req.body );
+    res.status( 200 ).json( newBookmark );
+  } catch ( error ) {
+    res.status( 400 ).json({error : err.message});
+  }
+});
+
+//DELETE
+bookmarks.delete ( '/:id' , async ( req , res ) => {
+  try {
+    const deleteBookmark = await Bookmark.findByIdAndRemove( req.params.id );
+    res.status( 200 ).json( deleteBookmark );
+  } catch ( error ) {
+    res.status( 400 ).json({error : error.message});
+  }
+});
+
 module.exports           = bookmarks;
