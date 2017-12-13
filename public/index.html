@@ -17,5 +17,13 @@
       <label class="add" for="submit"></label>
       <button id="submit" type="submit" class="">Add!</button>
     </form>
+    <table>
+      <tr class="each-site" ng-repeat-start="bookmark in ctrl.bookmarks">
+        <td class="title"><a target="_blank" href="{{ bookmark.url }}">{{ bookmark.title }}</a></td>
+        <td> </td>
+        <td><form ng-submit="ctrl.deleteBookmark( bookmark._id )"><button  class="delete" > x </button></form></td>
+      </tr>
+      <tr class="repeater" ng-repeat-end></tr>
+    </table>
   </body>
 </html>
