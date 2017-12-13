@@ -2,26 +2,29 @@ const app               = angular.module('bookmarkd', []);
 
 app.controller( 'mainController' , ['$http' , function ( $http ){
 
-    this.bookmarks = '';
+  this.bookmarks = '';
+  this.alertClass     = 'alert3'
+  this.alertText      = 'alerted'
 
-    this.getBookmarks = () => {
-      $http({
-        method    : 'GET',
-        url       : '/bookmarks'
-      }).then ( response => {
-        this.bookmarks = response.data;
-        console.log(this.bookmarks[0].title);
-        } , error => {
-          console.log (error.message );
-        }
-      );
-    };
+  this.getBookmarks = () => {
+    $http({
+      method    : 'GET',
+      url       : '/bookmarks'
+    }).then ( response => {
+      this.bookmarks = response.data;
+      console.log(this.bookmarks[0].title);
+      } , error => {
+        console.log (error.message );
+      }
+    );
+  };
 
-    //load immediately onto page
-    this.getBookmarks();
+  //load immediately onto page
+  this.getBookmarks();
 
 
-    this.form  = {};
+  this.form  = {};
+
   this.addBookmark = () => {
     $http({
       method      : 'POST',
