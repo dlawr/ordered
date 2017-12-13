@@ -1,0 +1,29 @@
+{
+  "name": "bookmarkd",
+  "version": "1.0.0",
+  "description": "angular 1.6 node express mongo",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.16.2",
+    "moment": "^2.19.3",
+    "mongoose": "^4.13.6",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.12.5",
+    "pretty-error": "^2.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Krafalski/super-computing-machine.git"
+  },
+  "author": "K. Rafalski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Krafalski/super-computing-machine/issues"
+  },
+  "homepage": "https://github.com/Krafalski/super-computing-machine#readme"
+}
