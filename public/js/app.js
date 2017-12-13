@@ -39,4 +39,29 @@ app.controller( 'mainController' , ['$http' , function ( $http ){
     }
   )
   }
+
+  this.deleteBookmark = ( id ) => {
+    $http({
+      method        : 'DELETE',
+      url           : '/bookmarks/' + id,
+      data          : id
+    }).then ( response => {
+
+      this.alertClass = 'alert2';
+      this.alertText = 'bookmark deleted';
+      setTimeout ( ( ) =>{
+        this.alertClass = '';
+        this.alertText = '';
+      }, 1000)
+
+      this.form = {};
+
+      let removeByIndex = this.bookmarks.findIndex ( bookmark => bookmark === response.data._id );
+
+      let removeBookmark = this.bookmarks.splice (removeByIndex, 1);
+
+    }, error =>{
+      console.log( error.message );
+    })
+  }
 }]);
